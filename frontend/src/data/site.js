@@ -1,7 +1,6 @@
 export const BRAND = {
   name: "Bansi Vihar",
   tagline: "Patna's Most Loved Pure Veg Restaurant",
-  estd: "Since 1987",
 };
 
 export const CONTACT_INFO = {
@@ -78,38 +77,11 @@ export const SIGNATURE_ITEMS = [
   },
 ];
 
-export const GALLERY_IMAGES = [
-  {
-    src: "https://images.unsplash.com/photo-1728910156510-77488f19b152?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
-    alt: "Plated luxury Indian course",
-    span: "tall",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1606471191009-63994c53433b?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
-    alt: "Spiced curry with chiaroscuro lighting",
-    span: "normal",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
-    alt: "Composed Indian thali on dark linen",
-    span: "normal",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1618449840665-9ed506d73a34?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
-    alt: "Golden saffron dessert close-up",
-    span: "tall",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
-    alt: "Crisp dosa with bowls of chutney",
-    span: "normal",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1505253758473-96b7015fcd40?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
-    alt: "Indo-Chinese noodles steaming in dark light",
-    span: "normal",
-  },
-];
+export const GALLERY_IMAGES = SIGNATURE_ITEMS.map((item, i) => ({
+  src: item.image,
+  alt: item.title,
+  span: i % 3 === 0 ? "tall" : "normal",
+}));
 
 export const REVIEWS_LIST = [
   {
@@ -167,5 +139,4 @@ export const NAV_LINKS = [
 export const HERO_IMAGE =
   "https://static.prod-images.emergentagent.com/jobs/d43041d6-0f8e-4e35-a9d5-c97049d4aea1/images/b8db68ec7e3ed8c0814ccc752ab3445546fc3af9353c7b04a8d6934ff4a7bab9.png";
 
-export const STORY_IMAGE =
-  "https://static.prod-images.emergentagent.com/jobs/d43041d6-0f8e-4e35-a9d5-c97049d4aea1/images/2c446120e8c71b2db0cbf79bb61fda3c6227e799f5f8605e737a133d0b72dac8.png";
+export const STORY_IMAGE = "";

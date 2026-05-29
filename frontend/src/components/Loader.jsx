@@ -51,7 +51,7 @@ export const Loader = ({ onComplete }) => {
               animate={{ opacity: 1, letterSpacing: "0.32em" }}
               transition={{ duration: 1.4, delay: 0.6 }}
             >
-              {BRAND.estd}
+              Patna · Pure Veg
             </motion.span>
 
             <motion.h1
@@ -75,7 +75,7 @@ export const Loader = ({ onComplete }) => {
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 1.4 }}
             >
-              Pure Vegetarian · Patna
+              Pure Vegetarian Restaurant
             </motion.p>
           </motion.div>
         </motion.div>

@@ -47,7 +47,7 @@ export const Reviews = () => {
           variants={{
             show: { transition: { staggerChildren: 0.15 } },
           }}
-          className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6"
+          className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto"
         >
           {[
             {
@@ -62,12 +62,6 @@ export const Reviews = () => {
               decimals: 1,
               suffix: " ★",
               label: "Average Rating",
-            },
-            {
-              testid: "reviews-tenure",
-              end: 38,
-              suffix: " yrs",
-              label: "Years of Service",
             },
           ].map((s, i) => (
             <motion.div

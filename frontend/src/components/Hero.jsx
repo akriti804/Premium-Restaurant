@@ -55,7 +55,7 @@ export const Hero = ({ ready }) => {
             className="flex items-center gap-3"
           >
             <span className="gold-line" />
-            <span className="text-overline">{BRAND.estd} · Patna</span>
+            <span className="text-overline">Patna · Pure Vegetarian</span>
           </motion.div>
 
           <motion.h1
@@ -136,10 +136,10 @@ export const Hero = ({ ready }) => {
             <div className="h-12 w-px bg-bansi-gold/30 hidden sm:block" />
             <div className="hidden sm:block">
               <div className="font-heading text-3xl md:text-4xl gold-text">
-                38
+                100%
               </div>
               <div className="text-xs uppercase tracking-[0.28em] text-bansi-muted mt-2">
-                Years of Heritage
+                Pure Vegetarian
               </div>
             </div>
           </motion.div>

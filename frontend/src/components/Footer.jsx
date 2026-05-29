@@ -18,7 +18,7 @@ export const Footer = () => {
             <p className="mt-4 font-body text-bansi-muted leading-relaxed max-w-md">
               Patna's most loved pure vegetarian restaurant. South Indian,
               Indo-Chinese, royal thalis and desserts — served with the warmth
-              of a family that has cooked here since 1987.
+              of a family kitchen.
             </p>
             <div className="flex gap-4 mt-8">
               {[
@@ -110,7 +110,7 @@ export const Footer = () => {
         <div className="luxury-divider mt-16 mb-6" />
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-[10px] uppercase tracking-[0.32em] text-bansi-muted">
-            © {new Date().getFullYear()} {BRAND.name}. Pure Vegetarian. Since 1987.
+            © {new Date().getFullYear()} {BRAND.name}. Pure Vegetarian Restaurant.
           </div>
           <div className="text-[10px] uppercase tracking-[0.32em] text-bansi-muted">
             Composed with love in Patna · Bihar · India
