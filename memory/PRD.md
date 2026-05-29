@@ -25,11 +25,9 @@ World-class luxury restaurant website for Bansi Vihar — Patna's most loved pur
 8. Contact: Maps iframe + Call + WhatsApp + Directions
 9. Black/gold footer with social icons
 
-## What's Been Implemented (2026-05-29)
-- Loader, Navbar, Hero, SignatureCollection, Story, Gallery, Reviews, Contact, Footer
-- All data-testids per `/app/frontend/src/constants/testIds.js`
-- Mock contact: +91 612 234 8876 / wa.me/919431045221 / Boring Road, Patna
-- Tested via testing_agent_v3 — 95% success, no critical issues
+## What's Been Implemented
+- **2026-05-29**: Loader, Navbar, Hero, SignatureCollection, Story, Gallery, Reviews, Contact, Footer (95% pass)
+- **2026-05-29 (v2)**: Dedicated `/menu` route with 6 luxury categories (31 items, INR pricing, signature sparkles, sticky tab nav, WhatsApp CTA). Navbar + Hero + Footer wired to new route. Cross-route anchor navigation works. (100% pass — iteration_2.json)
 
 ## Backlog (P0/P1/P2)
 - **P1**: Dedicated menu page with full categories & prices
