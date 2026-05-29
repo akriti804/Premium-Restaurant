@@ -27,7 +27,9 @@ World-class luxury restaurant website for Bansi Vihar — Patna's most loved pur
 
 ## What's Been Implemented
 - **2026-05-29**: Loader, Navbar, Hero, SignatureCollection, Story, Gallery, Reviews, Contact, Footer (95% pass)
-- **2026-05-29 (v2)**: Dedicated `/menu` route with 6 luxury categories (31 items, INR pricing, signature sparkles, sticky tab nav, WhatsApp CTA). Navbar + Hero + Footer wired to new route. Cross-route anchor navigation works. (100% pass — iteration_2.json)
+- **2026-05-29 (v2)**: Dedicated `/menu` route with 6 luxury categories (31 items, INR pricing, signature sparkles, sticky tab nav, WhatsApp CTA). Navbar + Hero + Footer wired to new route. (100% pass — iteration_2.json)
+- **2026-05-29 (v3)**: "Since 1987" removed everywhere; Story section image replaced with elegant "Awaiting Owner's Photograph" placeholder; Gallery now uses the named Signature food images.
+- **2026-05-29 (v4)**: New **Food Showcase** section with 20 AI-generated photoreal premium food images (Paneer Masala Dosa, Filter Coffee, Pav Bhaji, Vanilla Shake, Rasmalai, Idly Vada Sambar, Upma Plate, Chhole Bhature, Chana Bhature, Rava Dosa, Veg Fried Rice, Cold Coffee with Ice Cream, Rawa Butter Masala Dosa, Milk Shakes, Chowmein, Sambar Vada, Vegetable Pakoda, Cakes, Baby Corn Chilli, Manchurian Gravy). Hero signature image rotates daily via day-of-year. Rating updated to **4.6★**. New "Showcase" nav link. (100% pass — iteration_3.json)
 
 ## Backlog (P0/P1/P2)
 - **P1**: Dedicated menu page with full categories & prices

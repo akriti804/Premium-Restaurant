@@ -78,7 +78,7 @@ export const FoodShowcase = () => {
                   <h3 className="font-heading text-xl md:text-2xl text-white mt-2 leading-tight">
                     {item.name}
                   </h3>
-                  <p className="font-body text-xs md:text-sm text-bansi-muted mt-2 opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-20 transition-all duration-500">
+                  <p className="font-body text-xs md:text-sm text-bansi-muted mt-2 md:opacity-0 md:max-h-0 md:group-hover:opacity-100 md:group-hover:max-h-20 transition-all duration-500">
                     {item.blurb}
                   </p>
                 </div>
