@@ -4,10 +4,10 @@ export const BRAND = {
 };
 
 export const CONTACT_INFO = {
-  phone: "+91 612 234 8876",
-  phoneTel: "+916122348876",
-  whatsapp: "919431045221",
-  whatsappDisplay: "+91 94310 45221",
+  phone: "+91 612 222 4804",
+  phoneTel: "+916122224804",
+  whatsapp: "916122224804",
+  whatsappDisplay: "+91 612 222 4804",
   address: "5/A, Boring Road, Patna, Bihar 800001, India",
   shortAddress: "Boring Road, Patna",
   hours: [
@@ -19,6 +19,9 @@ export const CONTACT_INFO = {
   mapsLink:
     "https://www.google.com/maps/search/?api=1&query=Bansi+Vihar+Boring+Road+Patna",
 };
+
+export const RESTAURANT_FRONT_IMAGE =
+  "https://customer-assets.emergentagent.com/job_culinary-vihar/artifacts/v9nwbqdd_Screenshot%202026-05-29%20at%206.43.12%E2%80%AFPM.png";
 
 export const SIGNATURE_ITEMS = [
   {
@@ -140,4 +143,5 @@ export const NAV_LINKS = [
 export const HERO_IMAGE =
   "https://static.prod-images.emergentagent.com/jobs/d43041d6-0f8e-4e35-a9d5-c97049d4aea1/images/b8db68ec7e3ed8c0814ccc752ab3445546fc3af9353c7b04a8d6934ff4a7bab9.png";
 
-export const STORY_IMAGE = "";
+export const STORY_IMAGE =
+  "https://customer-assets.emergentagent.com/job_culinary-vihar/artifacts/v9nwbqdd_Screenshot%202026-05-29%20at%206.43.12%E2%80%AFPM.png";

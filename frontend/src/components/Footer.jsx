@@ -1,4 +1,4 @@
-import { Instagram, Facebook, Twitter, Phone, Mail } from "lucide-react";
+import { Instagram, Facebook, Twitter, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { FOOTER } from "@/constants/testIds";
 import { BRAND, CONTACT_INFO, NAV_LINKS } from "@/data/site";
@@ -88,16 +88,6 @@ export const Footer = () => {
                   className="hover:text-bansi-accent"
                 >
                   {CONTACT_INFO.phone}
-                </a>
-              </li>
-              <li className="flex items-start gap-3">
-                <Mail size={15} className="text-bansi-gold mt-1" />
-                <a
-                  data-testid={FOOTER.link("email")}
-                  href="mailto:hello@bansivihar.in"
-                  className="hover:text-bansi-accent"
-                >
-                  hello@bansivihar.in
                 </a>
               </li>
               <li className="text-bansi-muted leading-relaxed">

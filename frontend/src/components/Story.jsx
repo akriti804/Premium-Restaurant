@@ -1,11 +1,8 @@
 import { motion } from "framer-motion";
-import { ImageIcon } from "lucide-react";
 import { STORY } from "@/constants/testIds";
 import { STORY_IMAGE } from "@/data/site";
 
 export const Story = () => {
-  const hasImage = Boolean(STORY_IMAGE);
-
   return (
     <section
       id="story"
@@ -13,7 +10,6 @@ export const Story = () => {
       className="relative section-padding overflow-hidden"
       style={{ background: "#0B0B0B" }}
     >
-      {/* Soft ambient gold backdrop (replaces parallax image) */}
       <div className="absolute inset-0 pointer-events-none">
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[900px] w-[900px] rounded-full"
@@ -84,43 +80,39 @@ export const Story = () => {
           transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
           className="lg:col-span-5"
         >
-          <div className="relative aspect-[3/4] rounded-3xl overflow-hidden border border-bansi-gold/15">
-            {hasImage ? (
-              <>
-                <img
-                  src={STORY_IMAGE}
-                  alt="Bansi Vihar dining"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6 glass-card rounded-2xl p-5">
-                  <div className="text-overline">A Patna Institution</div>
-                  <div className="font-heading text-xl text-white mt-2">
-                    "Composed with patience. Served with love."
-                  </div>
-                </div>
-              </>
-            ) : (
-              // Elegant empty-state placeholder until owner uploads image
-              <div
-                data-testid="story-image-placeholder"
-                className="absolute inset-0 flex flex-col items-center justify-center text-center px-6"
-                style={{
-                  background:
-                    "radial-gradient(circle at 50% 40%, rgba(212,175,55,0.08), transparent 60%), #0B0B0B",
-                }}
-              >
-                <div className="h-16 w-16 rounded-full border border-bansi-gold/30 flex items-center justify-center text-bansi-gold">
-                  <ImageIcon size={22} />
-                </div>
-                <div className="font-heading text-2xl text-white mt-6">
-                  Awaiting Owner's Photograph
-                </div>
-                <p className="font-body text-sm text-bansi-muted mt-3 max-w-xs">
-                  A signature image of Bansi Vihar will appear here.
-                </p>
+          <div
+            data-testid="story-image"
+            className="relative aspect-[3/4] rounded-3xl overflow-hidden border border-bansi-gold/25 shadow-[0_30px_80px_rgba(0,0,0,0.6)]"
+          >
+            <img
+              src={STORY_IMAGE}
+              alt="Bansi Vihar storefront — Boring Road, Patna"
+              className="w-full h-full object-cover"
+            />
+            {/* Cinematic dark overlay to harmonize bright daytime photo with luxury theme */}
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(180deg, rgba(5,5,5,0.25) 0%, rgba(5,5,5,0.15) 40%, rgba(5,5,5,0.85) 100%)",
+              }}
+            />
+            {/* Subtle gold vignette */}
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                boxShadow: "inset 0 0 120px rgba(0,0,0,0.7)",
+              }}
+            />
+            <div className="absolute bottom-6 left-6 right-6 glass-card rounded-2xl p-5">
+              <div className="text-overline">The Bansi Vihar Storefront</div>
+              <div className="font-heading text-xl text-white mt-2">
+                "Composed with patience. Served with love."
               </div>
-            )}
+              <div className="text-xs font-body text-bansi-muted mt-2">
+                Boring Road · Patna
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>

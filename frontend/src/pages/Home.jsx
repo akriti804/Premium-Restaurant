@@ -7,6 +7,7 @@ import FoodShowcase from "@/components/FoodShowcase";
 import Story from "@/components/Story";
 import Gallery from "@/components/Gallery";
 import Reviews from "@/components/Reviews";
+import RestaurantIdentity from "@/components/RestaurantIdentity";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -24,6 +25,7 @@ export default function Home() {
         <Story />
         <Gallery />
         <Reviews />
+        <RestaurantIdentity />
         <Contact />
       </main>
       <Footer />
