@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { NAV } from "@/constants/testIds";
 import { NAV_LINKS, BRAND } from "@/data/site";
 
 export const Navbar = ({ ready }) => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 32);
@@ -14,11 +17,41 @@ export const Navbar = ({ ready }) => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleAnchor = (href) => {
+  const handleNav = (link) => {
     setOpen(false);
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (link.route) {
+      navigate(link.href);
+      window.scrollTo({ top: 0, behavior: "instant" });
+      return;
+    }
+    // anchor - if on home, scroll; else go home then scroll
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        document
+          .querySelector(link.href)
+          ?.scrollIntoView({ behavior: "smooth" });
+      }, 150);
+    } else {
+      document
+        .querySelector(link.href)
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
+
+  const goReserve = () => {
+    setOpen(false);
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
+      }, 150);
+    } else {
+      document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const isMenuPage = location.pathname === "/menu";
 
   return (
     <motion.nav
@@ -27,30 +60,29 @@ export const Navbar = ({ ready }) => {
       animate={ready ? { y: 0, opacity: 1 } : {}}
       transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "backdrop-blur-xl bg-[#050505]/80 border-b border-bansi-gold/15"
+        scrolled || isMenuPage
+          ? "backdrop-blur-xl bg-[#050505]/85 border-b border-bansi-gold/15"
           : "bg-transparent"
       }`}
     >
       <div className="container-lux flex items-center justify-between py-5">
-        <a
+        <button
           data-testid={NAV.logo}
-          href="#top"
-          onClick={(e) => {
-            e.preventDefault();
+          onClick={() => {
+            navigate("/");
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
           className="font-heading text-2xl md:text-3xl gold-text"
         >
           {BRAND.name}
-        </a>
+        </button>
 
         <div className="hidden md:flex items-center gap-10">
           {NAV_LINKS.map((l) => (
             <button
               key={l.key}
               data-testid={NAV.link(l.key)}
-              onClick={() => handleAnchor(l.href)}
+              onClick={() => handleNav(l)}
               className="text-xs font-body uppercase tracking-[0.28em] text-bansi-muted hover:text-bansi-accent transition-colors duration-300"
             >
               {l.label}
@@ -58,17 +90,13 @@ export const Navbar = ({ ready }) => {
           ))}
         </div>
 
-        <a
+        <button
           data-testid={NAV.cta}
-          href="#contact"
-          onClick={(e) => {
-            e.preventDefault();
-            handleAnchor("#contact");
-          }}
+          onClick={goReserve}
           className="hidden md:inline-flex btn-primary-gold"
         >
           Reserve
-        </a>
+        </button>
 
         <button
           data-testid={NAV.mobileToggle}
@@ -94,22 +122,15 @@ export const Navbar = ({ ready }) => {
                 <button
                   key={l.key}
                   data-testid={`${NAV.link(l.key)}-mobile`}
-                  onClick={() => handleAnchor(l.href)}
+                  onClick={() => handleNav(l)}
                   className="text-left text-sm font-body uppercase tracking-[0.3em] text-bansi-muted hover:text-bansi-accent"
                 >
                   {l.label}
                 </button>
               ))}
-              <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleAnchor("#contact");
-                }}
-                className="btn-primary-gold w-full mt-2"
-              >
+              <button onClick={goReserve} className="btn-primary-gold w-full mt-2">
                 Reserve Table
-              </a>
+              </button>
             </div>
           </motion.div>
         )}

@@ -157,7 +157,7 @@ export const REVIEWS_LIST = [
 ];
 
 export const NAV_LINKS = [
-  { key: "menu", label: "Menu", href: "#signature" },
+  { key: "menu", label: "Menu", href: "/menu", route: true },
   { key: "story", label: "Story", href: "#story" },
   { key: "gallery", label: "Gallery", href: "#gallery" },
   { key: "reviews", label: "Reviews", href: "#reviews" },

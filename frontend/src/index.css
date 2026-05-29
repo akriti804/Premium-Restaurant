@@ -225,6 +225,14 @@ body {
   }
 }
 
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 /* Hide scrollbar momentarily on loader */
 .no-scroll {
   overflow: hidden;

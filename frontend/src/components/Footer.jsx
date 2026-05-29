@@ -1,4 +1,5 @@
 import { Instagram, Facebook, Twitter, Phone, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 import { FOOTER } from "@/constants/testIds";
 import { BRAND, CONTACT_INFO, NAV_LINKS } from "@/data/site";
 
@@ -11,7 +12,9 @@ export const Footer = () => {
       <div className="container-lux">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           <div className="md:col-span-5">
-            <div className="font-heading text-3xl gold-text">{BRAND.name}</div>
+            <Link to="/" className="font-heading text-3xl gold-text inline-block">
+              {BRAND.name}
+            </Link>
             <p className="mt-4 font-body text-bansi-muted leading-relaxed max-w-md">
               Patna's most loved pure vegetarian restaurant. South Indian,
               Indo-Chinese, royal thalis and desserts — served with the warmth
@@ -40,17 +43,37 @@ export const Footer = () => {
           <div className="md:col-span-3">
             <div className="text-overline">Explore</div>
             <ul className="mt-5 space-y-3">
-              {NAV_LINKS.map((l) => (
-                <li key={l.key}>
-                  <a
-                    data-testid={FOOTER.link(l.key)}
-                    href={l.href}
-                    className="font-body text-bansi-muted hover:text-bansi-accent transition-colors"
-                  >
-                    {l.label}
-                  </a>
-                </li>
-              ))}
+              {NAV_LINKS.map((l) =>
+                l.route ? (
+                  <li key={l.key}>
+                    <Link
+                      data-testid={FOOTER.link(l.key)}
+                      to={l.href}
+                      className="font-body text-bansi-muted hover:text-bansi-accent transition-colors"
+                    >
+                      {l.label}
+                    </Link>
+                  </li>
+                ) : (
+                  <li key={l.key}>
+                    <a
+                      data-testid={FOOTER.link(l.key)}
+                      href={`/${l.href}`}
+                      onClick={(e) => {
+                        if (window.location.pathname === "/") {
+                          e.preventDefault();
+                          document
+                            .querySelector(l.href)
+                            ?.scrollIntoView({ behavior: "smooth" });
+                        }
+                      }}
+                      className="font-body text-bansi-muted hover:text-bansi-accent transition-colors"
+                    >
+                      {l.label}
+                    </a>
+                  </li>
+                )
+              )}
             </ul>
           </div>
 

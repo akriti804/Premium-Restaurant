@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, UtensilsCrossed } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { HERO } from "@/constants/testIds";
 import { HERO_IMAGE, BRAND } from "@/data/site";
 
@@ -13,6 +14,7 @@ const fadeUp = {
 };
 
 export const Hero = ({ ready }) => {
+  const navigate = useNavigate();
   const handleScrollTo = (id) => {
     const el = document.querySelector(id);
     if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -91,7 +93,7 @@ export const Hero = ({ ready }) => {
           >
             <button
               data-testid={HERO.exploreBtn}
-              onClick={() => handleScrollTo("#signature")}
+              onClick={() => navigate("/menu")}
               className="btn-primary-gold"
             >
               Explore Menu
