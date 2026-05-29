@@ -3,6 +3,7 @@ import Loader from "@/components/Loader";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import SignatureCollection from "@/components/SignatureCollection";
+import FoodShowcase from "@/components/FoodShowcase";
 import Story from "@/components/Story";
 import Gallery from "@/components/Gallery";
 import Reviews from "@/components/Reviews";
@@ -19,6 +20,7 @@ export default function Home() {
       <main>
         <Hero ready={ready} />
         <SignatureCollection />
+        <FoodShowcase />
         <Story />
         <Gallery />
         <Reviews />

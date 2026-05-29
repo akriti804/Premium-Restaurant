@@ -1,0 +1,22 @@
+{
+  "summary": "Frontend-only validation of new Food Showcase feature on Bansi Vihar site. All 13 checks pass: showcase section renders between Signature & Story, heading 'Twenty plates, one luxurious table.' correct, all 20 expected cards present with image/overline/name (via showcase-<slug> testids), hero image is daily-rotated via getDailySignature (today index=9 → Rava Dosa, hero src matches SHOWCASE_ITEMS[9].image), Today's Signature label shows 'Rava Dosa' (no longer hardcoded 'Paper Masala Dosa'), hero stat shows '4.6 ★' (4.1 absent), Reviews counter ends at 4.6 (4.1 absent), Showcase nav link present and smooth-scrolls to #showcase, footer Showcase link also scrolls correctly, all existing sections (#top, #signature, #story, #gallery, #reviews, #contact) intact, /menu route still works.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "getDailySignature() uses local-timezone Date; users in different timezones may see different 'today' signatures around midnight UTC boundary. Acceptable for marketing rotation but worth noting.",
+    "FoodShowcase cards rely on hover to reveal blurb (opacity-0 → group-hover:opacity-100). On touch devices the blurb is never visible. Consider tap-to-reveal or always-visible blurb on small screens."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (not requested)", "frontend": "100%"},
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Showcase section verified live at https://culinary-vihar.preview.emergentagent.com. Use data-testid='food-showcase' for the section and 'showcase-<slug>' for each of the 20 cards (slugs listed in /app/frontend/src/data/showcase.js). Hero floating image testid = 'hero-floating-food' (from HERO.image in /app/frontend/src/constants/testIds.js). Daily-rotation formula: dayOfYear % 20.",
+  "rca of the issue": "N/A — no issues found."
+}

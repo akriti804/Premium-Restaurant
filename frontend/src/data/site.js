@@ -130,6 +130,7 @@ export const REVIEWS_LIST = [
 
 export const NAV_LINKS = [
   { key: "menu", label: "Menu", href: "/menu", route: true },
+  { key: "showcase", label: "Showcase", href: "#showcase" },
   { key: "story", label: "Story", href: "#story" },
   { key: "gallery", label: "Gallery", href: "#gallery" },
   { key: "reviews", label: "Reviews", href: "#reviews" },

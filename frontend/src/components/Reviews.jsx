@@ -58,7 +58,7 @@ export const Reviews = () => {
             },
             {
               testid: REVIEWS.rating,
-              end: 4.1,
+              end: 4.6,
               decimals: 1,
               suffix: " ★",
               label: "Average Rating",

@@ -2,7 +2,8 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, UtensilsCrossed } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { HERO } from "@/constants/testIds";
-import { HERO_IMAGE, BRAND } from "@/data/site";
+import { BRAND } from "@/data/site";
+import { getDailySignature } from "@/data/showcase";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -15,6 +16,7 @@ const fadeUp = {
 
 export const Hero = ({ ready }) => {
   const navigate = useNavigate();
+  const daily = getDailySignature();
   const handleScrollTo = (id) => {
     const el = document.querySelector(id);
     if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -127,7 +129,7 @@ export const Hero = ({ ready }) => {
             <div className="h-12 w-px bg-bansi-gold/30" />
             <div>
               <div className="font-heading text-3xl md:text-4xl gold-text">
-                4.1 ★
+                4.6 ★
               </div>
               <div className="text-xs uppercase tracking-[0.28em] text-bansi-muted mt-2">
                 Avg. Rating
@@ -163,8 +165,9 @@ export const Hero = ({ ready }) => {
             />
             <motion.img
               data-testid={HERO.image}
-              src={HERO_IMAGE}
-              alt="Bansi Vihar signature dish"
+              src={daily.image}
+              alt={daily.name}
+              key={daily.slug}
               className="relative z-10 w-[110%] max-w-none object-contain animate-float"
               style={{
                 filter: "drop-shadow(0 25px 60px rgba(0,0,0,0.6)) drop-shadow(0 0 40px rgba(212,175,55,0.25))",
@@ -181,7 +184,7 @@ export const Hero = ({ ready }) => {
           >
             <div className="text-overline">Today's Signature</div>
             <div className="font-heading text-xl text-white mt-1">
-              Paper Masala Dosa
+              {daily.name}
             </div>
           </motion.div>
         </div>
