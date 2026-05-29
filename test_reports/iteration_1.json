@@ -1,0 +1,31 @@
+{
+  "summary": "Frontend-only Playwright testing of Bansi Vihar luxury restaurant single-page website. All major sections render correctly, all 6 signature items, 6 gallery items, 6 review cards present. Loader fades after ~3s, navbar becomes glassmorphic on scroll, smooth anchor navigation works, hero counters/CTAs work, Contact tel:/wa.me/Maps links use correct URLs, Google Map iframe loads, footer renders socials. Site is responsive on desktop (1920), tablet (768), and mobile (390). One observed flaky issue: the mobile drawer did not appear visible during automated toggle test (mobile nav link selector timeout) — likely a Framer-Motion height-animation timing issue but main agent should verify manually.",
+  "backend_issues": {
+    "critical": [],
+    "minor": []
+  },
+  "frontend_issues": {
+    "ui_bugs": [
+      {"component": "Navbar mobile drawer", "issue": "After clicking [data-testid=nav-mobile-toggle] on 390px viewport, drawer mobile links (nav-link-{key}-mobile) were not visible/found within 30s. Could be Framer-Motion height animation timing or click not registering. Worth manual verification.", "selector": "[data-testid=nav-mobile-toggle]", "priority": "MEDIUM"}
+    ],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [],
+  "action_items": [
+    "Manually verify mobile menu (hamburger toggle) on a real mobile viewport — drawer should open with menu links and Reserve CTA. If broken, ensure onClick toggle handler fires and AnimatePresence mounts the drawer; consider adding aria-expanded for testability."
+  ],
+  "critical_code_review_comments": [
+    "Home.jsx renders <Loader> unconditionally even after ready=true; once Loader unmounts via AnimatePresence internally it's fine, but parent could conditionally render to free memory.",
+    "Hero headline contains 'pure veg' inside a <span> on a new <br/> line which yields concatenated text 'Patna's most lovedpure veg restaurant.' without space when reading textContent — visually fine but accessibility tools may concatenate awkwardly. Consider adding aria-label.",
+    "Map iframe has heavy CSS filter (invert/hue-rotate) for dark theme — may reduce map readability/contrast for low-vision users.",
+    "Loader timing (2600ms visible + 800ms fade) is hardcoded; consider waiting for window 'load' event for slow networks."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (skipped per request)", "frontend": "~95%"},
+  "test_credentials": "N/A - static marketing site",
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Site is single-page scroll layout at https://culinary-vihar.preview.emergentagent.com . Loader takes ~3s. All sections have data-testids per /app/frontend/src/constants/testIds.js. Verified: loader, navbar glass-on-scroll, anchor smooth scroll, 6 signature items, story, 6 gallery items, 9,680+/4.1/38 counters, 6 review cards, tel:+916122348876, wa.me/919431045221, maps iframe, footer socials. Only mobile drawer toggle needs manual verification."
+}
