@@ -191,6 +191,42 @@ npm run build
 - AI Food Recommendations
 - Multi-language Support
 
+# Premium Restaurant Website
+
+A luxury restaurant website built with React.js, Tailwind CSS, and modern UI design principles.
+
+## 🌐 Live Demo
+
+[🚀 View Live Website](https://premium-restau.netlify.app)
+
+## 🚀 Features
+
+- Premium Black & Gold Theme
+- Responsive Design
+- Luxury Food Showcase
+- Customer Reviews Section
+- Contact & Reservation Section
+- Modern UI/UX
+
+## 🛠️ Tech Stack
+
+- React.js
+- Tailwind CSS
+- CRACO
+- JavaScript
+- Netlify
+
+## 📷 Screenshots
+
+<img width="978" height="727" alt="Screenshot 2026-05-29 at 7 16 22 PM" src="https://github.com/user-attachments/assets/06bd8514-f923-42c1-b168-a53b15be7557" />
+
+<img width="975" height="780" alt="Screenshot 2026-05-29 at 7 16 31 PM" src="https://github.com/user-attachments/assets/93002e16-f9fa-4acc-9012-c591650c3964" />
+
+<img width="1043" height="842" alt="Screenshot 2026-05-29 at 7 16 40 PM" src="https://github.com/user-attachments/assets/1485376e-c5ba-4571-800a-58e72d751921" />
+
+<img width="953" height="830" alt="Screenshot 2026-05-29 at 7 16 49 PM" src="https://github.com/user-attachments/assets/61941705-d21d-4036-8885-4b150078de46" />
+
+
 
 ## 👩‍💻 Developer
 
